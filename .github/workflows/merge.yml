@@ -1,23 +1,25 @@
-name: Bump version
+name: "Merge Action"
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  increment-version:
+    name: "Increment the github tag version"
+    runs-on: aws-ec2
     steps:
-      - uses: actions/checkout@v4
-      - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
+      - name: Clone Self
+        uses: actions/checkout@v2
+      - name: Get changed files
+        id: changes
+        # Set outputs using the command.
+        run: |
+          set -x
+          git fetch --tags
+          previous_tag=$(git tag -l --sort=-v:refname '[0-9]*' | head -1)
+          new_tag=$((previous_tag + 1))
+          git tag $new_tag && git push origin $new_tag
 
           
