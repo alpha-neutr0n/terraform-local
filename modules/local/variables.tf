@@ -10,6 +10,6 @@ variable "length" {
   default = "15"
 }
 
-variable "test2"{
+variable "ff"{
 default = true
 }
