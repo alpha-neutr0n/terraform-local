@@ -10,7 +10,7 @@ variable "test10"{
   default = test1
 }
 
-variable "test3"{
+variable "test30"{
   default = test3
 }
 
