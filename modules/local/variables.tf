@@ -10,12 +10,12 @@ variable "test4" {
   default = test4
 }
 
-variable "test1"{
-  default = test1
-}
-
 variable "test3"{
   default = test3
+}
+
+variable "test10"{
+  default = test1
 }
 
 variable "length" {
