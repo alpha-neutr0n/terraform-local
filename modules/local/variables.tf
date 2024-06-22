@@ -6,13 +6,15 @@ variable "content" {
   default = "FO"
 }
 
+variable "test"{
+  default = true
+}
+
+variable "test3"{
+  default = true
+}
+
 variable "length" {
   default = "15"
 }
-
-variable "ff"{
-default = true
-}
-
-
 
