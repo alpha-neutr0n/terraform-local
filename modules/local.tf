@@ -4,7 +4,7 @@ resource "local_file" "pet" {
 }
 
 resource "random_string" "random" {
-  length           = 15
+  length           = var.length
   special          = true
   override_special = "/@£$"
 }

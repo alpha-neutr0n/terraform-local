@@ -6,3 +6,6 @@ variable "content" {
   default = "FO"
 }
 
+variable "length" {
+  default = "15"
+}
