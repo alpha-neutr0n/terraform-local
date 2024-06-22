@@ -9,3 +9,7 @@ variable "content" {
 variable "length" {
   default = "15"
 }
+
+variable "test"{
+default = true
+}
