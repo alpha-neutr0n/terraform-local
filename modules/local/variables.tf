@@ -2,9 +2,7 @@ variable "filename" {
   default = "/Users/manikhanth.katti/Desktop/terraform-local/pets.txt"
 }
 
-variable "content" {
-  default = "FO"
-}
+variable "content" {}
 
 variable "test10"{
   default = test1
