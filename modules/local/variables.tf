@@ -15,7 +15,3 @@ variable "test30"{
 variable "test4" {
   default = test4
 }
-
-variable "length" {
-  default = "15"
-}
